@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Safety Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+
+        <h2>URL: <span style="color:#555;">{{ url }}</span></h2>
+        <h3>Status: 
+            {% if status == "Safe" %}
+                <span style="color:green;">✔ Safe</span>
+            {% else %}
+                <span style="color:red;">⚠ Suspicious</span>
+            {% endif %}
+        </h3>
+
+        <h3>Reasons:</h3>
+        <ul>
+            {% for r in reasons %}
+            <li>{{ r }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/" class="back">Check Another URL</a>
+    </div>
+</body>
+</html>
